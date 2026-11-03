@@ -3,7 +3,6 @@ Imports Newtonsoft.Json
 
 ''' <summary>
 ''' Configuración del sistema, en el archivo PublicadorMarketONE_Settings.json junto al ejecutable (formato simple del
-''' Publicador Supermercado: conexión directa a la base, sin ServerConfig ni ServidoresEmpresas de MarketONE).
 ''' </summary>
 Public Class Settings
     Private Const NombreArchivo As String = "PublicadorMarketONE_Settings"
