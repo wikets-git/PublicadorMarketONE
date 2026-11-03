@@ -23,8 +23,8 @@ Partial Class PublicadorDTE
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PublicadorDTE))
@@ -53,16 +53,14 @@ Partial Class PublicadorDTE
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.Segundos = New System.Windows.Forms.Timer(Me.components)
         Me.xTabla = New System.Windows.Forms.DataGridView()
-        Me.TipoDocDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.POS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WinDeco1 = New WinDeco.WinDeco()
         Me.SeleccionDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoDocDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumDocDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreLocalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.POS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RutClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,6 +68,8 @@ Partial Class PublicadorDTE
         Me.MontoDocumentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObservacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sDocumentos = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WinDeco1 = New WinDeco.WinDeco()
         Me.sEstado.SuspendLayout()
         Me.gInformacion.SuspendLayout()
         Me.gStatus.SuspendLayout()
@@ -123,7 +123,7 @@ Partial Class PublicadorDTE
         Me.lResumen.BackColor = System.Drawing.Color.Transparent
         Me.lResumen.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lResumen.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.lResumen.Location = New System.Drawing.Point(250, 597)
+        Me.lResumen.Location = New System.Drawing.Point(357, 597)
         Me.lResumen.Name = "lResumen"
         Me.lResumen.Size = New System.Drawing.Size(870, 22)
         Me.lResumen.TabIndex = 200
@@ -372,68 +372,6 @@ Partial Class PublicadorDTE
         Me.xTabla.Size = New System.Drawing.Size(1215, 419)
         Me.xTabla.TabIndex = 340
         '
-        'TipoDocDescripcion
-        '
-        Me.TipoDocDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.TipoDocDescripcion.DataPropertyName = "TipoDocDescripcion"
-        Me.TipoDocDescripcion.HeaderText = "Documento"
-        Me.TipoDocDescripcion.Name = "TipoDocDescripcion"
-        Me.TipoDocDescripcion.ReadOnly = True
-        Me.TipoDocDescripcion.Width = 87
-        '
-        'POS
-        '
-        Me.POS.DataPropertyName = "POS"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "N0"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.POS.DefaultCellStyle = DataGridViewCellStyle2
-        Me.POS.HeaderText = "POS"
-        Me.POS.Name = "POS"
-        Me.POS.ReadOnly = True
-        Me.POS.Width = 40
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "TipoDocDescripcion"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Documento"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 120
-        '
-        'WinDeco1
-        '
-        Me.WinDeco1.AlturaFooter = 65
-        Me.WinDeco1.AlturaTitulo = 50
-        Me.WinDeco1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.WinDeco1.BordeVentana = 2
-        Me.WinDeco1.ColorBordeVentana = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.WinDeco1.ColorPanelBanner = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.WinDeco1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.WinDeco1.FondoAplicacionA = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.WinDeco1.FondoAplicacionB = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.WinDeco1.FondoColorA = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.WinDeco1.FondoColorB = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.WinDeco1.FooterColorA = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.WinDeco1.FooterColorB = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.WinDeco1.FooterSolido = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.WinDeco1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.WinDeco1.ImagenBanner = Global.PublicadorMarketONE.My.Resources.Resources.banner3
-        Me.WinDeco1.Location = New System.Drawing.Point(0, 0)
-        Me.WinDeco1.Margin = New System.Windows.Forms.Padding(2)
-        Me.WinDeco1.MuestraBordeExterior = -1
-        Me.WinDeco1.Name = "WinDeco1"
-        Me.WinDeco1.SiempreVisible = False
-        Me.WinDeco1.Size = New System.Drawing.Size(1240, 50)
-        Me.WinDeco1.TabIndex = 147
-        Me.WinDeco1.TituloVentana = "Publicador DTE"
-        Me.WinDeco1.UbicacionTitulo = New System.Drawing.Point(4, 19)
-        Me.WinDeco1.VerCerrar = True
-        Me.WinDeco1.VerLogo = True
-        Me.WinDeco1.VerMaximizar = True
-        Me.WinDeco1.VerMinimizar = True
-        Me.WinDeco1.VerTitulo = True
-        '
         'SeleccionDataGridViewCheckBoxColumn
         '
         Me.SeleccionDataGridViewCheckBoxColumn.DataPropertyName = "Seleccion"
@@ -449,6 +387,15 @@ Partial Class PublicadorDTE
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         Me.EstadoDataGridViewTextBoxColumn.Width = 65
+        '
+        'TipoDocDescripcion
+        '
+        Me.TipoDocDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.TipoDocDescripcion.DataPropertyName = "TipoDocDescripcion"
+        Me.TipoDocDescripcion.HeaderText = "Documento"
+        Me.TipoDocDescripcion.Name = "TipoDocDescripcion"
+        Me.TipoDocDescripcion.ReadOnly = True
+        Me.TipoDocDescripcion.Width = 87
         '
         'NumDocDataGridViewTextBoxColumn
         '
@@ -488,6 +435,18 @@ Partial Class PublicadorDTE
         Me.NombreLocalDataGridViewTextBoxColumn.Name = "NombreLocalDataGridViewTextBoxColumn"
         Me.NombreLocalDataGridViewTextBoxColumn.ReadOnly = True
         Me.NombreLocalDataGridViewTextBoxColumn.Width = 58
+        '
+        'POS
+        '
+        Me.POS.DataPropertyName = "POS"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Format = "N0"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.POS.DefaultCellStyle = DataGridViewCellStyle2
+        Me.POS.HeaderText = "POS"
+        Me.POS.Name = "POS"
+        Me.POS.ReadOnly = True
+        Me.POS.Width = 40
         '
         'ClienteDataGridViewTextBoxColumn
         '
@@ -554,6 +513,47 @@ Partial Class PublicadorDTE
         'sDocumentos
         '
         Me.sDocumentos.DataSource = GetType(PublicadorMarketONE.ResultadoPublicadorDTE)
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "TipoDocDescripcion"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Documento"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 120
+        '
+        'WinDeco1
+        '
+        Me.WinDeco1.AlturaFooter = 65
+        Me.WinDeco1.AlturaTitulo = 50
+        Me.WinDeco1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.WinDeco1.BordeVentana = 2
+        Me.WinDeco1.ColorBordeVentana = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.WinDeco1.ColorPanelBanner = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.WinDeco1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.WinDeco1.FondoAplicacionA = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.WinDeco1.FondoAplicacionB = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.WinDeco1.FondoColorA = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.WinDeco1.FondoColorB = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.WinDeco1.FooterColorA = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.WinDeco1.FooterColorB = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.WinDeco1.FooterSolido = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.WinDeco1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.WinDeco1.ImagenBanner = Global.PublicadorMarketONE.My.Resources.Resources.banner3
+        Me.WinDeco1.Location = New System.Drawing.Point(0, 0)
+        Me.WinDeco1.Margin = New System.Windows.Forms.Padding(2)
+        Me.WinDeco1.MuestraBordeExterior = -1
+        Me.WinDeco1.Name = "WinDeco1"
+        Me.WinDeco1.SiempreVisible = False
+        Me.WinDeco1.Size = New System.Drawing.Size(1240, 50)
+        Me.WinDeco1.TabIndex = 147
+        Me.WinDeco1.TituloVentana = "Publicador DTE"
+        Me.WinDeco1.UbicacionTitulo = New System.Drawing.Point(4, 19)
+        Me.WinDeco1.VerCerrar = True
+        Me.WinDeco1.VerLogo = True
+        Me.WinDeco1.VerMaximizar = True
+        Me.WinDeco1.VerMinimizar = True
+        Me.WinDeco1.VerTitulo = True
         '
         'PublicadorDTE
         '
