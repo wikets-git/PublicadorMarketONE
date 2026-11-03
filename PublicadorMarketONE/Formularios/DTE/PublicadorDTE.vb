@@ -193,6 +193,7 @@ Public Class PublicadorDTE
             Return
         End If
         EnvioDetenido = False
+        Salir.Enabled = True     'Reanudar: Detener vuelve a quedar disponible
         ActualizarIconoBandeja()
         If Not SistemaIniciado Then
             Espera.Enabled = False
@@ -229,6 +230,8 @@ Public Class PublicadorDTE
     ''' <summary>Deja el envío detenido hasta que se presione Ejecutar.</summary>
     Private Sub MarcarEnvioDetenido()
         EnvioDetenido = True
+        Salir.Enabled = False    'Detener queda deshabilitado hasta presionar Ejecutar
+        bEjecutar.Enabled = True
         xSegundos.Text = ""
         lStatus.Text = "Envío detenido"
         Operacion("Envío detenido. Presione Ejecutar para reanudar.", False)
@@ -578,7 +581,7 @@ Public Class PublicadorDTE
             GrabarStatus(ErroresCiclo OrElse conError > 0)
         End If
         bEjecutar.Enabled = True
-        Salir.Enabled = True
+        Salir.Enabled = Not cancelado
         If cancelado Then
             'Detenido con el botón Detener: no sigue el ciclo automático hasta presionar Ejecutar
             MarcarEnvioDetenido()
