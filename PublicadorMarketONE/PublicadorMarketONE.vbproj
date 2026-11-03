@@ -206,7 +206,6 @@
     <None Include="Datos\MarketONE.dbml.layout">
       <DependentUpon>MarketONE.dbml</DependentUpon>
     </None>
-    <None Include="PublicadorMarketONE_Settings.ejemplo.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -236,7 +235,6 @@
     <None Include="Resources\remove_table.png" />
     <None Include="Resources\remove24.png" />
     <None Include="Resources\remove32.png" />
-    <Content Include="Super.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
