@@ -1,3 +1,25 @@
+﻿''' <summary>Datos del documento que necesita el Publicador (sin las columnas pesadas de DocumentosG, como Firma o TED).</summary>
+Public Class DocumentoPendiente
+    Public Property Local As Decimal
+    Public Property TipoDoc As String = ""
+    Public Property Numero As Decimal
+    Public Property Fecha As Date
+    Public Property Cliente As Decimal
+    Public Property Rut As String = ""
+    Public Property Total As Decimal
+    Public Property FPago As String = ""
+    Public Property POS As Decimal
+    Public Property Usuario As String = ""
+    Public Property STATUS_DTE As Decimal
+    Public Property MensajeSincronizacion As String = ""
+
+    Public ReadOnly Property Clave As String
+        Get
+            Return $"{Local}|{TipoDoc}|{Numero}"
+        End Get
+    End Property
+End Class
+
 ''' <summary>
 ''' Lectura de los documentos pendientes de envío al SII, con el modelo de datos de MarketONE (MarketONEDataContext),
 ''' igual que el módulo Control DTE Emitidos de MarketONE: tabla DocumentosG, estado en STATUS_DTE.
@@ -20,27 +42,6 @@ Public Module RepositorioDocumentos
     ''' </summary>
     Public ReadOnly EstadosPendientes As Decimal() = {CDec(EstadosSII.No_Enviado), CDec(EstadosSII.Timbrado)}
 
-    ''' <summary>Datos del documento que necesita el Publicador (sin las columnas pesadas de DocumentosG, como Firma o TED).</summary>
-    Public Class DocumentoPendiente
-        Public Property Local As Decimal
-        Public Property TipoDoc As String = ""
-        Public Property Numero As Decimal
-        Public Property Fecha As Date
-        Public Property Cliente As Decimal
-        Public Property Rut As String = ""
-        Public Property Total As Decimal
-        Public Property FPago As String = ""
-        Public Property POS As Decimal
-        Public Property Usuario As String = ""
-        Public Property STATUS_DTE As Decimal
-        Public Property MensajeSincronizacion As String = ""
-
-        Public ReadOnly Property Clave As String
-            Get
-                Return $"{Local}|{TipoDoc}|{Numero}"
-            End Get
-        End Property
-    End Class
 
     ''' <summary>Indica si el local emite electrónicamente el tipo de documento (misma regla de DTE.EsElectronico).</summary>
     Public Function EsElectronico(loc As Locales, tipoDoc As String) As Boolean
