@@ -48,7 +48,7 @@ Public Module Funciones
     End Property
 
     ''' <summary>
-    ''' Carpeta base donde se crean las subcarpetas TED, CAF, PDF y TXT. Por defecto es la carpeta del programa.
+    ''' Carpeta base donde se crea la subcarpeta TED. Por defecto es la carpeta del programa.
     ''' RutaArchivos de la configuración se usa solo si es válida: relativa (se combina con la carpeta del programa)
     ''' o absoluta en una unidad que exista en este equipo; si no, se usa la carpeta del programa.
     ''' </summary>

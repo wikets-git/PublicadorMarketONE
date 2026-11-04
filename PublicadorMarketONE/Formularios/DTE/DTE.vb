@@ -1911,23 +1911,15 @@ Public Module DTE
                 Informacion("Algunos parámetros de facturación electrónica no se encuentran completos. Notifique a soporte.")
             End If
 
+            'Publicador: solo se crea la carpeta TED (la usa el generador del timbre). CAF, PDF y TXT no se usan en el
+            'envío automático; si alguna vez se necesitan, RutaDocumentoElectronico crea la carpeta al usarla.
             Directorio_CAF = P_DIRECTORIO & "\CAF\"
-            If Not System.IO.Directory.Exists(Directorio_CAF) Then
-                System.IO.Directory.CreateDirectory(Directorio_CAF)
-            End If
             Directorio_TED = P_DIRECTORIO & "\TED\"
             If Not System.IO.Directory.Exists(Directorio_TED) Then
                 System.IO.Directory.CreateDirectory(Directorio_TED)
             End If
             Directorio_PDF = P_DIRECTORIO & "\PDF\"
-            If Not System.IO.Directory.Exists(Directorio_PDF) Then
-                System.IO.Directory.CreateDirectory(Directorio_PDF)
-            End If
             Directorio_TXT = P_DIRECTORIO & "\TXT\"
-            If Not System.IO.Directory.Exists(Directorio_TXT) Then
-                System.IO.Directory.CreateDirectory(Directorio_TXT)
-            End If
-            'P_DIRECTORIO = Environment.CurrentDirectory
 
         Catch ex As Exception
             Return False

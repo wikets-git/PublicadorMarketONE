@@ -1,4 +1,4 @@
-# Publicador MarketONE v1.00
+﻿# Publicador MarketONE v1.00
 
 Aplicación VB.NET (WinForms, .NET Framework 4.7.2, Visual Studio 2022) que **envía al SII, de forma automática, los documentos electrónicos que MarketONE deja pendientes de envío**.
 
@@ -75,7 +75,7 @@ Si cambian en MarketONE, se deben copiar de nuevo aquí:
 
 | Archivo aquí | Origen en MarketONE | Cambios |
 |---|---|---|
-| `Formularios\DTE\DTE.vb` | `Formularios\DTE\DTE.vb` | Solo los `Imports` (se quitan Crystal, OpenXml, Excel y WPF; `MarketONE.Funciones` → `PublicadorMarketONE.Funciones`), y en `EmitirBoleta` el error al actualizar el estado también queda en `MensajeDTE`. |
+| `Formularios\DTE\DTE.vb` | `Formularios\DTE\DTE.vb` | Solo los `Imports` (se quitan Crystal, OpenXml, Excel y WPF; `MarketONE.Funciones` → `PublicadorMarketONE.Funciones`), en `EmitirBoleta` el error al actualizar el estado también queda en `MensajeDTE`, y `Parametros_DTE` solo crea la carpeta TED (no CAF, PDF ni TXT, que el Publicador no usa). |
 | `Datos\MarketONE.dbml`, `Datos\MarketONE1.designer.vb` | `MarketONE.dbml`, `MarketONE1.designer.vb` | Sin cambios. Del `.dbml` se quitó la cadena de conexión de desarrollo (con usuario y clave). |
 | `Objetos\Validacion.vb` | `Objetos\Validacion.vb` | Se quita un `Imports` de OpenXml. |
 | `Datos\ConstantesMarketONE.vb` | Estructuras de `Funciones.vb` (`TiposDoc`, `EstadosSII`, `FormasPago`, `MotivosDocumento`, etc.) | Sin cambios. |
@@ -92,7 +92,7 @@ Usa el **formato simple de Publicador Supermercado**: conexión directa a la bas
 | `Empresa` | Nombre de la empresa (título, bandeja y `status.json`). |
 | `Servidor`, `Base`, `UsuarioBD`, `ClaveBD` | Conexión SQL a la base MarketONE de la empresa. Si `UsuarioBD` va vacío, usa la seguridad integrada de Windows. |
 | `TiempoConexion` | Segundos de espera para conectar. |
-| `RutaArchivos` | Carpeta base donde se crean las subcarpetas TED, CAF, PDF y TXT (vacío = carpeta del programa). |
+| `RutaArchivos` | Carpeta base donde se crea la subcarpeta TED (vacío = carpeta del programa). |
 | `MinutosEnvioAutomatico` | Minutos entre ciclos (por defecto 5). |
 | `RegistrosPorCiclo` | Documentos por lote (0 = todos de una vez). Se puede cambiar en pantalla, en el cuadro *Registros*. |
 | `LocalPublicador` | Local con que trabaja el usuario SYS. Con 0 se usa el primer local con facturación electrónica. Se procesan los documentos de todos los locales, cada uno con sus propios parámetros DTE. |
@@ -131,7 +131,7 @@ En la carpeta `Logs`, junto al programa:
 
 ## Varias empresas en el mismo equipo
 
-Pueden correr varios Publicadores a la vez, uno por empresa. Cada uno va en su propia carpeta, con su `PublicadorMarketONE_Settings.json` (otro `Servidor`/`Base` y otra `Empresa`). Cada copia tiene su ícono en la bandeja (el texto muestra la empresa), sus propios `Logs` y sus carpetas TED, CAF, PDF y TXT.
+Pueden correr varios Publicadores a la vez, uno por empresa. Cada uno va en su propia carpeta, con su `PublicadorMarketONE_Settings.json` (otro `Servidor`/`Base` y otra `Empresa`). Cada copia tiene su ícono en la bandeja (el texto muestra la empresa), sus propios `Logs` y su carpeta TED.
 
 Dos copias que apunten a la **misma** base no pueden correr juntas: la segunda muestra la ventana de la que ya corre y se cierra.
 

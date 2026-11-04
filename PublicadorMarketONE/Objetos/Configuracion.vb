@@ -17,7 +17,7 @@ Public Class Settings
     Public Property ClaveBD As String = ""
     ''' <summary>Segundos de espera para conectar.</summary>
     Public Property TiempoConexion As Integer = 5
-    ''' <summary>Carpeta base donde se crean las subcarpetas TED, CAF, PDF y TXT. Vacío = carpeta del programa.</summary>
+    ''' <summary>Carpeta base donde se crea la subcarpeta TED. Vacío = carpeta del programa.</summary>
     Public Property RutaArchivos As String = ""
     ''' <summary>Minutos entre ciclos del envío automático en Publicador DTE.</summary>
     Public Property MinutosEnvioAutomatico As Integer = 5
