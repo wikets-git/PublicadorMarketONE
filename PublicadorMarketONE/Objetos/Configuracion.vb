@@ -2,10 +2,16 @@
 Imports Newtonsoft.Json
 
 ''' <summary>
-''' Configuración del sistema, en el archivo PublicadorMarketONE_Settings.json junto al ejecutable (formato simple del
+''' Configuración del sistema, en el archivo PublicadorMarketONE_Settings.json junto al ejecutable.
+''' El usuario y la clave de la base de datos no van en el archivo: están fijos en el código, igual que en MarketONE
+''' (PATRONCONEXION en Funciones.vb).
 ''' </summary>
 Public Class Settings
     Private Const NombreArchivo As String = "PublicadorMarketONE_Settings"
+
+    'Credenciales SQL de MarketONE (las mismas de PATRONCONEXION en MarketONE\Funciones.vb)
+    Private Const USUARIO_BD As String = "wikets"
+    Private Const CLAVE_BD As String = "software"
 
     ''' <summary>Nombre de la empresa (se muestra en el acceso y en los títulos).</summary>
     Public Property Empresa As String = ""
@@ -13,8 +19,6 @@ Public Class Settings
     Public Property Servidor As String = ""
     ''' <summary>Base de datos de MarketONE de la empresa (ej.: MarketONE_Empresa).</summary>
     Public Property Base As String = ""
-    Public Property UsuarioBD As String = ""
-    Public Property ClaveBD As String = ""
     ''' <summary>Segundos de espera para conectar.</summary>
     Public Property TiempoConexion As Integer = 5
     ''' <summary>Carpeta base donde se crea la subcarpeta TED. Vacío = carpeta del programa.</summary>
@@ -28,13 +32,8 @@ Public Class Settings
     <JsonIgnore>
     Public ReadOnly Property CadenaConexion As String
         Get
-            Dim cs = $"Data Source={Servidor};Initial Catalog={Base};Connect Timeout={If(TiempoConexion > 0, TiempoConexion, 5)};"
-            If UsuarioBD.Trim = "" Then
-                cs &= "Integrated Security=True;"
-            Else
-                cs &= $"User ID={UsuarioBD};Password={ClaveBD};"
-            End If
-            Return cs
+            Return $"Data Source={Servidor};Initial Catalog={Base};Connect Timeout={If(TiempoConexion > 0, TiempoConexion, 5)};" &
+                   $"User ID={USUARIO_BD};Password={CLAVE_BD};"
         End Get
     End Property
 

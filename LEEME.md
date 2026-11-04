@@ -90,14 +90,14 @@ Usa el **formato simple de Publicador Supermercado**: conexión directa a la bas
 | Clave | Uso |
 |---|---|
 | `Empresa` | Nombre de la empresa (título, bandeja y `status.json`). |
-| `Servidor`, `Base`, `UsuarioBD`, `ClaveBD` | Conexión SQL a la base MarketONE de la empresa. Si `UsuarioBD` va vacío, usa la seguridad integrada de Windows. |
+| `Servidor`, `Base` | Conexión SQL a la base MarketONE de la empresa. El usuario y la clave **no van en el archivo**: están fijos en el código (`Objetos\Configuracion.vb`), los mismos de MarketONE. Si un archivo antiguo trae `UsuarioBD` o `ClaveBD`, se ignoran. |
 | `TiempoConexion` | Segundos de espera para conectar. |
 | `RutaArchivos` | Carpeta base donde se crea la subcarpeta TED (vacío = carpeta del programa). |
 | `MinutosEnvioAutomatico` | Minutos entre ciclos (por defecto 5). |
 | `RegistrosPorCiclo` | Documentos por lote (0 = todos de una vez). Se puede cambiar en pantalla, en el cuadro *Registros*. |
 | `LocalPublicador` | Local con que trabaja el usuario SYS. Con 0 se usa el primer local con facturación electrónica. Se procesan los documentos de todos los locales, cada uno con sus propios parámetros DTE. |
 
-El archivo contiene credenciales: no lo suba a un repositorio. Está en `.gitignore`.
+El archivo ya no contiene credenciales. Igual queda en `.gitignore`, porque cada instalación tiene su propio servidor y base.
 
 ## Archivo `status.json` (monitoreo)
 
