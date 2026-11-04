@@ -821,6 +821,12 @@ Public Class PublicadorDTE
         Bandeja.Visible = False
         Bandeja.Dispose()
     End Sub
+
+    Private Sub xLogo_Click(sender As Object, e As EventArgs) Handles xLogo.Click
+        'Using acerca As New AcercaDe()
+        '    acerca.ShowDialog(Me)
+        'End Using
+    End Sub
 #End Region
 End Class
 

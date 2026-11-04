@@ -39,9 +39,9 @@ Partial Class PublicadorDTE
         Me.gInformacion = New System.Windows.Forms.GroupBox()
         Me.bEjecutar = New System.Windows.Forms.Button()
         Me.Salir = New System.Windows.Forms.Button()
-        Me.xCantDoc = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.gStatus = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.xCantDoc = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.xSegundos = New System.Windows.Forms.TextBox()
@@ -70,11 +70,13 @@ Partial Class PublicadorDTE
         Me.sDocumentos = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WinDeco1 = New WinDeco.WinDeco()
+        Me.xLogo = New System.Windows.Forms.PictureBox()
         Me.sEstado.SuspendLayout()
         Me.gInformacion.SuspendLayout()
         Me.gStatus.SuspendLayout()
         CType(Me.xTabla, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sDocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'xRegistros
@@ -83,10 +85,10 @@ Partial Class PublicadorDTE
         Me.xRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.xRegistros.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xRegistros.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.xRegistros.Location = New System.Drawing.Point(258, 18)
+        Me.xRegistros.Location = New System.Drawing.Point(267, 18)
         Me.xRegistros.MaxLength = 5
         Me.xRegistros.Name = "xRegistros"
-        Me.xRegistros.Size = New System.Drawing.Size(42, 21)
+        Me.xRegistros.Size = New System.Drawing.Size(75, 21)
         Me.xRegistros.TabIndex = 147
         Me.xRegistros.Text = "0"
         Me.xRegistros.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -96,7 +98,7 @@ Partial Class PublicadorDTE
         Me.lLote.AutoSize = True
         Me.lLote.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lLote.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.lLote.Location = New System.Drawing.Point(201, 22)
+        Me.lLote.Location = New System.Drawing.Point(188, 22)
         Me.lLote.Name = "lLote"
         Me.lLote.Size = New System.Drawing.Size(55, 13)
         Me.lLote.TabIndex = 146
@@ -111,7 +113,7 @@ Partial Class PublicadorDTE
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(1, 2)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(1216, 16)
+        Me.Label7.Size = New System.Drawing.Size(964, 16)
         Me.Label7.TabIndex = 138
         Me.Label7.Text = " Información"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -168,14 +170,12 @@ Partial Class PublicadorDTE
         Me.gInformacion.BackColor = System.Drawing.Color.Transparent
         Me.gInformacion.Controls.Add(Me.bEjecutar)
         Me.gInformacion.Controls.Add(Me.Salir)
-        Me.gInformacion.Controls.Add(Me.xCantDoc)
-        Me.gInformacion.Controls.Add(Me.Label3)
         Me.gInformacion.Controls.Add(Me.gStatus)
         Me.gInformacion.Controls.Add(Me.Label7)
         Me.gInformacion.Controls.Add(Me.xOperacion)
-        Me.gInformacion.Location = New System.Drawing.Point(11, 485)
+        Me.gInformacion.Location = New System.Drawing.Point(263, 485)
         Me.gInformacion.Name = "gInformacion"
-        Me.gInformacion.Size = New System.Drawing.Size(1216, 94)
+        Me.gInformacion.Size = New System.Drawing.Size(964, 94)
         Me.gInformacion.TabIndex = 118
         Me.gInformacion.TabStop = False
         '
@@ -186,7 +186,7 @@ Partial Class PublicadorDTE
         Me.bEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bEjecutar.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.bEjecutar.Image = Global.PublicadorMarketONE.My.Resources.Resources.rotate24
-        Me.bEjecutar.Location = New System.Drawing.Point(1010, 24)
+        Me.bEjecutar.Location = New System.Drawing.Point(758, 24)
         Me.bEjecutar.Name = "bEjecutar"
         Me.bEjecutar.Size = New System.Drawing.Size(100, 64)
         Me.bEjecutar.TabIndex = 242
@@ -202,7 +202,7 @@ Partial Class PublicadorDTE
         Me.Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Salir.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Salir.Image = Global.PublicadorMarketONE.My.Resources.Resources.remove32
-        Me.Salir.Location = New System.Drawing.Point(1116, 24)
+        Me.Salir.Location = New System.Drawing.Point(864, 24)
         Me.Salir.Name = "Salir"
         Me.Salir.Size = New System.Drawing.Size(100, 64)
         Me.Salir.TabIndex = 241
@@ -211,29 +211,14 @@ Partial Class PublicadorDTE
         Me.Salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Salir.UseVisualStyleBackColor = False
         '
-        'xCantDoc
-        '
-        Me.xCantDoc.Enabled = False
-        Me.xCantDoc.Location = New System.Drawing.Point(155, 23)
-        Me.xCantDoc.Name = "xCantDoc"
-        Me.xCantDoc.Size = New System.Drawing.Size(75, 20)
-        Me.xCantDoc.TabIndex = 16
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(3, 25)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(146, 15)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Cantidad de Documentos"
-        '
         'gStatus
         '
+        Me.gStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gStatus.BackColor = System.Drawing.Color.Transparent
+        Me.gStatus.Controls.Add(Me.Label1)
         Me.gStatus.Controls.Add(Me.xRegistros)
         Me.gStatus.Controls.Add(Me.lLote)
+        Me.gStatus.Controls.Add(Me.xCantDoc)
         Me.gStatus.Controls.Add(Me.Label15)
         Me.gStatus.Controls.Add(Me.Label14)
         Me.gStatus.Controls.Add(Me.xSegundos)
@@ -241,11 +226,34 @@ Partial Class PublicadorDTE
         Me.gStatus.Controls.Add(Me.xTiempo)
         Me.gStatus.Controls.Add(Me.Label10)
         Me.gStatus.Controls.Add(Me.Label9)
-        Me.gStatus.Location = New System.Drawing.Point(644, 20)
+        Me.gStatus.Location = New System.Drawing.Point(392, 20)
         Me.gStatus.Name = "gStatus"
-        Me.gStatus.Size = New System.Drawing.Size(315, 70)
+        Me.gStatus.Size = New System.Drawing.Size(350, 70)
         Me.gStatus.TabIndex = 154
         Me.gStatus.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(188, 47)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(73, 13)
+        Me.Label1.TabIndex = 148
+        Me.Label1.Text = "Documentos"
+        '
+        'xCantDoc
+        '
+        Me.xCantDoc.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.xCantDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.xCantDoc.Enabled = False
+        Me.xCantDoc.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.xCantDoc.Location = New System.Drawing.Point(267, 44)
+        Me.xCantDoc.Name = "xCantDoc"
+        Me.xCantDoc.Size = New System.Drawing.Size(75, 21)
+        Me.xCantDoc.TabIndex = 16
+        Me.xCantDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
@@ -327,18 +335,19 @@ Partial Class PublicadorDTE
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(-3, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(318, 16)
+        Me.Label9.Size = New System.Drawing.Size(353, 16)
         Me.Label9.TabIndex = 138
-        Me.Label9.Text = " Status"
+        Me.Label9.Text = " Parámetros"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'xOperacion
         '
+        Me.xOperacion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.xOperacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.xOperacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.xOperacion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xOperacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.xOperacion.Location = New System.Drawing.Point(258, 23)
+        Me.xOperacion.Location = New System.Drawing.Point(6, 23)
         Me.xOperacion.Multiline = True
         Me.xOperacion.Name = "xOperacion"
         Me.xOperacion.ReadOnly = True
@@ -555,11 +564,25 @@ Partial Class PublicadorDTE
         Me.WinDeco1.VerMinimizar = True
         Me.WinDeco1.VerTitulo = True
         '
+        'xLogo
+        '
+        Me.xLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.xLogo.BackColor = System.Drawing.Color.Transparent
+        Me.xLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.xLogo.Image = CType(resources.GetObject("xLogo.Image"), System.Drawing.Image)
+        Me.xLogo.Location = New System.Drawing.Point(12, 485)
+        Me.xLogo.Name = "xLogo"
+        Me.xLogo.Size = New System.Drawing.Size(179, 94)
+        Me.xLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.xLogo.TabIndex = 342
+        Me.xLogo.TabStop = False
+        '
         'PublicadorDTE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1240, 650)
+        Me.Controls.Add(Me.xLogo)
         Me.Controls.Add(Me.lResumen)
         Me.Controls.Add(Me.xTabla)
         Me.Controls.Add(Me.WinDeco1)
@@ -579,6 +602,7 @@ Partial Class PublicadorDTE
         Me.gStatus.PerformLayout()
         CType(Me.xTabla, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.sDocumentos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -593,7 +617,6 @@ Partial Class PublicadorDTE
     Friend WithEvents WinDeco1 As WinDeco.WinDeco
     Friend WithEvents gInformacion As GroupBox
     Friend WithEvents xCantDoc As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Timer As Timer
     Friend WithEvents gStatus As GroupBox
     Friend WithEvents Label9 As Label
@@ -626,4 +649,6 @@ Partial Class PublicadorDTE
     Friend WithEvents FPagoDescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MontoDocumentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObservacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
+    Friend WithEvents xLogo As PictureBox
 End Class

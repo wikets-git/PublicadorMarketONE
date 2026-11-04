@@ -139,6 +139,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\AcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Objetos\ClienteREST.vb" />
     <Compile Include="Controles\RutMaskedTextBox.vb">
       <SubType>Component</SubType>
@@ -178,11 +181,14 @@
     <Compile Include="Objetos\Validacion.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\AcercaDe.resx">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\DTE\PublicadorDTE.resx">
       <DependentUpon>PublicadorDTE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -212,6 +218,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Wikets.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
