@@ -5,7 +5,7 @@ Imports System.Runtime.CompilerServices
 Public Module Funciones
 
     Public Const P_SISTEMA As String = "Publicador MarketONE"
-    Public Const VERSION As String = "1.02"
+    Public Const VERSION As String = "1.5"
 
     Public Const CHECK As Boolean = True
     Public Const UNCHECK As Boolean = False

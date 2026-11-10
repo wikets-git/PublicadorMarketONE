@@ -504,6 +504,17 @@ Public Module DTE
             doc.Encabezado.Receptor.CiudadRecep = TextoDTE(ObtenerComuna(Cli.Comuna).Truncate(20))
             doc.Encabezado.Receptor.CorreoRecep = Cli.Email.ToString.Trim
 
+            If DocG.TipoDoc = TiposDoc.FacturaExportacion Or DocG.TipoDoc = TiposDoc.NotaCreditoExportacion Or DocG.TipoDoc = TiposDoc.NotaDebitoExportacion Then
+                doc.Encabezado.Receptor.CmnaRecep = TextoDTE(ObtenerComuna(Cli.ComunaExtranjera).Truncate(20))
+                doc.Encabezado.Receptor.CiudadRecep = TextoDTE(ObtenerComuna(Cli.CiudadExtranjera).Truncate(20))
+            End If
+
+            If doc.Encabezado.Receptor.CmnaRecep = "" Then
+                If Cli.Extranjero Then
+                    doc.Encabezado.Receptor.CmnaRecep = Cli.ComunaExtranjera
+                    doc.Encabezado.Receptor.CiudadRecep = Cli.CiudadExtranjera
+                End If
+            End If
 
             'Documento/Descuentos Generales
             If DocG.Descuento > 0 Then
